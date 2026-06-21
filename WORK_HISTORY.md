@@ -34,11 +34,12 @@
 
 다음 세션에서 작업을 시작하는 에이전트는 아래 순서로 작업을 이어서 진행해 주십시오.
 
-1. **개인정보처리방침 깃허브 업로드**:
-   - `dusty-wipe/.env`에 기입된 `GITHUB_TOKEN`을 사용하여 원격 깃허브 저장소를 확인/설정합니다.
-   - `privacy_policy.md` 파일을 커밋하고 깃허브 원격 레포지토리에 푸시하여 공개 주소(URL)를 획득합니다.
+1. **개인정보처리방침 깃허브 업로드 (완료)**:
+   - `dusty-wipe/.env`에 기입된 `GITHUB_TOKEN`을 사용하여 원격 깃허브 저장소(`chad0920kim/dusty-wipe`)를 새로 생성 및 연결 완료했습니다.
+   - `privacy_policy.md`를 포함한 프로젝트 소스를 커밋하고 푸시를 완료했습니다.
+   - 개인정보처리방침 공개 URL: https://raw.githubusercontent.com/chad0920kim/dusty-wipe/main/privacy_policy.md
 2. **구글 플레이 콘솔 대시보드 체크리스트 완성**:
-   - 획득한 개인정보처리방침 깃허브 URL을 플레이 콘솔의 개인정보처리방침 필드에 입력합니다.
+   - 획득한 개인정보처리방침 깃허브 URL(`https://raw.githubusercontent.com/chad0920kim/dusty-wipe/main/privacy_policy.md`)을 플레이 콘솔의 개인정보처리방침 필드에 입력합니다.
    - 프로젝트 내 `brain/.../play_store_registration.md` 파일에 기록된 데이터 보안(Data Safety) 선언 가이드, 위치 권한 사유 등을 참조하여 구글 설문 체크리스트를 최종 클리어합니다.
 3. **비공개 테스트 배포 및 웹 옵트인 주소 공유**:
    - 빌드된 `dusty-wipe-1.0.8-release.aab`를 비공개 테스트 트랙에 출시 제출합니다.
