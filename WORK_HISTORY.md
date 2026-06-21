@@ -20,27 +20,26 @@
 
 ## 📋 2. 스토어 심사 및 테스트 준비 현황
 
-1. **테스터 피드백 취합 구글 시트 생성 완료**:
+1. **구글 플레이 스토어 주소**:
+   - 링크: https://play.google.com/store/apps/details?id=com.anonymous.dustywipe
+2. **비공개 테스트 웹 참여 링크**:
+   - 링크: https://play.google.com/apps/testing/com.anonymous.dustywipe
+3. **테스터 피드백 취합 구글 시트 생성 완료**:
    - 공유 링크: https://docs.google.com/spreadsheets/d/1kwEsuWve5VqdvsuVImnHCzd7vt0ANBhJF07UHEk4N-A/edit
    - 형태: 상단 3개 행 예시 문구 포함 + 하단 1~20번 테스터용 공백 행 구성 완료.
-2. **개인정보처리방침 문서 로컬 생성 완료**:
+4. **개인정보처리방침 문서 로컬 및 원격 업로드 완료**:
    - 경로: [/Users/tide/Projects/dusty-wipe/privacy_policy.md](file:///Users/tide/Projects/dusty-wipe/privacy_policy.md)
-3. **깃허브 제어 토큰 환경변수 등록 완료**:
-   - 경로: [/Users/tide/Projects/dusty-wipe/.env](file:///Users/tide/Projects/dusty-wipe/.env) 내 `GITHUB_TOKEN` 변수에 PAT 저장 완료.
+   - 공개 URL: https://raw.githubusercontent.com/chad0920kim/dusty-wipe/main/privacy_policy.md
 
 ---
 
 ## 🚀 3. 다음 단계 가이드 (Next Steps for Next Agent)
 
-다음 세션에서 작업을 시작하는 에이전트는 아래 순서로 작업을 이어서 진행해 주십시오.
+모든 필수적인 구글 플레이 콘솔 배포 및 설정이 **완료**되었습니다. 테스터 의견 수집과 피드백 취합 준비가 완료되었습니다.
 
-1. **개인정보처리방침 깃허브 업로드 (완료)**:
-   - `dusty-wipe/.env`에 기입된 `GITHUB_TOKEN`을 사용하여 원격 깃허브 저장소(`chad0920kim/dusty-wipe`)를 새로 생성 및 연결 완료했습니다.
-   - `privacy_policy.md`를 포함한 프로젝트 소스를 커밋하고 푸시를 완료했습니다.
-   - 개인정보처리방침 공개 URL: https://raw.githubusercontent.com/chad0920kim/dusty-wipe/main/privacy_policy.md
-2. **구글 플레이 콘솔 대시보드 체크리스트 완성**:
-   - 획득한 개인정보처리방침 깃허브 URL(`https://raw.githubusercontent.com/chad0920kim/dusty-wipe/main/privacy_policy.md`)을 플레이 콘솔의 개인정보처리방침 필드에 입력합니다.
-   - 프로젝트 내 `brain/.../play_store_registration.md` 파일에 기록된 데이터 보안(Data Safety) 선언 가이드, 위치 권한 사유 등을 참조하여 구글 설문 체크리스트를 최종 클리어합니다.
-3. **비공개 테스트 배포 및 웹 옵트인 주소 공유**:
-   - 빌드된 `dusty-wipe-1.0.8-release.aab`를 비공개 테스트 트랙에 출시 제출합니다.
-   - 구글 그룹스를 구성하고, 비공개 테스트 테스터 탭 하단에서 **웹 옵트인 링크**를 추출하여 테스터들과 공유할 수 있도록 사용자에게 전달합니다.
+1. **개인정보처리방침 깃허브 업로드 (완료)**
+2. **구글 플레이 콘솔 대시보드 체크리스트 완성 (완료)**:
+   - 개인정보처리방침 링크, 데이터 보안(Data Safety) 선언 및 백그라운드 위치/포그라운드 서비스 정당성 소명 완료.
+3. **비공개 테스트 배포 및 웹 옵트인 주소 공유 (완료)**:
+   - `versionCode 59` 기반의 빌드본(`dusty-wipe-1.0.8-release.aab` 및 난독화 매핑 파일 `mapping.txt`)이 정상 제출되어 심사 중 상태입니다.
+   - 웹 옵트인 링크가 등록되어 테스터들과 공유할 준비를 마쳤습니다.
