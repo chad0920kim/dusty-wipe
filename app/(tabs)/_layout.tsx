@@ -13,54 +13,38 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
+        headerShown: false, // 헤더를 전체 비활성화하고 컴포넌트 내부 헤더를 사용
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
+          title: '안개 닦기',
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{
-                ios: 'chevron.left.forwardslash.chevron.right',
-                android: 'code',
-                web: 'code',
+                ios: 'wind',
+                android: 'air',
+                web: 'air',
               }}
               tintColor={color}
-              size={28}
+              size={26}
             />
-          ),
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable style={{ marginRight: 15 }}>
-                {({ pressed }) => (
-                  <SymbolView
-                    name={{ ios: 'info.circle', android: 'info', web: 'info' }}
-                    size={25}
-                    tintColor={Colors[colorScheme].text}
-                    style={{ opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
           ),
         }}
       />
       <Tabs.Screen
         name="two"
         options={{
-          title: 'Tab Two',
+          title: '설정',
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{
-                ios: 'chevron.left.forwardslash.chevron.right',
-                android: 'code',
-                web: 'code',
+                ios: 'gearshape',
+                android: 'settings',
+                web: 'settings',
               }}
               tintColor={color}
-              size={28}
+              size={26}
             />
           ),
         }}
