@@ -1,12 +1,54 @@
-import React from 'react';
-import { StyleSheet, View, Text, ScrollView, Platform } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, View, Text, ScrollView, Platform, Switch, NativeModules } from 'react-native';
+
+const { DustyWipeModule } = NativeModules;
 
 export default function TabTwoScreen() {
+  const [fogEnabled, setFogEnabled] = useState(true);
+
+  useEffect(() => {
+    if (DustyWipeModule && DustyWipeModule.isFogEnabled) {
+      DustyWipeModule.isFogEnabled()
+        .then((enabled: boolean) => {
+          setFogEnabled(enabled);
+        })
+        .catch((err: any) => {
+          console.error("Failed to read fog status: ", err);
+        });
+    }
+  }, []);
+
+  const handleToggleFog = (value: boolean) => {
+    setFogEnabled(value);
+    if (DustyWipeModule && DustyWipeModule.setFogEnabled) {
+      DustyWipeModule.setFogEnabled(value);
+    }
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>설정 및 안내</Text>
         <Text style={styles.appVersion}>더스티 와이프 (DustyWipe) v1.0</Text>
+      </View>
+
+      {/* 설정 섹션 */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>⚙️ 앱 설정</Text>
+        <View style={styles.settingRow}>
+          <View style={styles.settingTextContainer}>
+            <Text style={styles.settingTitle}>잠금화면 안개 활성화</Text>
+            <Text style={styles.settingDesc}>
+              화면이 켜질 때 미세먼지 수치에 따른 안개 화면을 표시합니다. 해제 시 일반 대시보드로 즉시 진입합니다.
+            </Text>
+          </View>
+          <Switch
+            value={fogEnabled}
+            onValueChange={handleToggleFog}
+            trackColor={{ false: '#cbd5e1', true: '#bae6fd' }}
+            thumbColor={fogEnabled ? '#0284c7' : '#94a3b8'}
+          />
+        </View>
       </View>
 
       {/* 앱 설명 섹션 */}
@@ -175,5 +217,30 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#64748b',
     lineHeight: 20,
+  },
+  settingRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#f8fafc',
+    padding: 16,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    gap: 12,
+  },
+  settingTextContainer: {
+    flex: 1,
+  },
+  settingTitle: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: '#1e293b',
+    marginBottom: 4,
+  },
+  settingDesc: {
+    fontSize: 13,
+    color: '#64748b',
+    lineHeight: 18,
   },
 });
