@@ -29,7 +29,7 @@ export default function TabTwoScreen() {
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>설정 및 안내</Text>
-        <Text style={styles.appVersion}>더스티 와이프 (DustyWipe) v1.0</Text>
+        <Text style={styles.appVersion}>더스티 와이프 (DustyWipe) v1.0.9</Text>
       </View>
 
       {/* 설정 섹션 */}
