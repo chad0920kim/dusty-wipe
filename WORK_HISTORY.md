@@ -6,8 +6,8 @@
 
 ## 🛠️ 1. 현재 빌드 및 버전 정보
 
-* **최신 앱 버전**: `versionCode 59`, `versionName "1.0.8"`
-* **빌드 결과물**: 바탕화면(`~/Desktop/`)에 **`dusty-wipe-1.0.8-release.aab`** 및 **`mapping.txt`** 생성 완료 (R8 난독화 적용 및 versionCode 59로 재빌드 완료)
+* **최신 앱 버전**: `versionCode 60`, `versionName "1.0.8"`
+* **빌드 결과물**: 바탕화면(`~/Desktop/`)에 **`dusty-wipe-1.0.8-release.aab`** 및 **`mapping.txt`** 생성 완료 (R8 난독화 적용 및 versionCode 60으로 재빌드 완료)
 * **이전 빌드 보존**: 직전 빌드인 **`dusty-wipe-1.0.7-release.aab`**만 보존하고 나머지는 삭제 완료
 * **최근 핵심 패치 사항**:
   - 포그라운드 서비스의 백그라운드 위치 권한(LOCATION) 동적 승급 로직 패치 (수동 새로고침 시 4초 타임아웃 및 종로구 롤백 버그 해결).
